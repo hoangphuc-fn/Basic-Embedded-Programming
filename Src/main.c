@@ -10,6 +10,9 @@ void bai1(void);
 void bai2(void);
 void bai3(void);
 void plus(void);
+void subtract(void);
+void multiple(void);
+void divide(void);
 char data_send[100];
 char operator_1[10];
 char operator_2[10];
@@ -20,6 +23,7 @@ uint8_t volatile selection;
 uint8_t volatile isOperator_2 = 0;
 uint8_t volatile cnt2 = 0;
 uint8_t volatile array_index =0;
+uint8_t volatile is_bai2 = 0;
 int main(void)
 {
 
@@ -32,12 +36,15 @@ int main(void)
   while (1){
 	  switch(selection){
 			case '1': 
+				is_bai2 = 0;
 				bai1();
 				break;
 			case '2':
+				is_bai2 = 1;
 				bai2();
 				break;
 			case '3':
+				is_bai2 = 0;
 				bai3();
 				break;
 			// show menu
@@ -49,9 +56,10 @@ int main(void)
 }
 
 void reset_value(void){
-	operation_flag = 1;
+	operation_flag = 0;
 	isOperator_2 = 0;
 	cnt2 = 0;
+	is_bai2 = 0;
 	array_index =0;
 	for(int i=0; i<10; i++){
 		operator_1[i] = 0;
@@ -63,8 +71,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
 	if(huart->Instance==huart4.Instance)
 	{
-		if(selection == 'a'){
-			operation_flag = 1;
+		if(is_bai2){
+			if(selection == 'a' || selection == 'b' || selection == 'c' ||selection == 'd'){
+				operation_flag= 1;
+			}
 		}
 		if(operation_flag){
 			if(!isOperator_2){
@@ -133,7 +143,6 @@ void menu_2(void){
 	sprintf(data_send, "ESC: Return previous menu\n");
 	UART_Print(&huart4,data_send);
 	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
-	selection = 2;
 }
 void bai1(void){
 	sprintf(data_send, "1. Student Informations\n");
@@ -152,9 +161,22 @@ void bai1(void){
 }
 void bai2(void){
 	menu_2();
+	while(selection != 'a' && selection != 'b' && selection != 'c' && selection != 'd');
 	switch(selection){
 		case 'a':
 			plus();
+			reset_value();
+			break;
+		case 'b':
+			subtract();
+			reset_value();
+			break;
+		case 'c':
+			multiple();
+			reset_value();
+			break;
+		case 'd':
+			divide();
 			reset_value();
 			break;
 		case 27:
@@ -182,6 +204,66 @@ void plus(void){
 	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
 	while(selection != 27);
 }
+void subtract(void){
+	sprintf(data_send, "b. Subtract\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "Operand 1: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(!isOperator_2);
+	sprintf(data_send, "Operand 2: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(operation_flag);
+	sprintf(data_send, "Result: %d\n", atoi(operator_1) - atoi(operator_2));
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "ESC: Return previous menu\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(selection != 27);
+}
+void multiple(void){
+	sprintf(data_send, "c. Multiple\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "Operand 1: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(!isOperator_2);
+	sprintf(data_send, "Operand 2: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(operation_flag);
+	sprintf(data_send, "Result: %d\n", atoi(operator_1) * atoi(operator_2));
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "ESC: Return previous menu\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(selection != 27);
+}
+void divide(void){
+	sprintf(data_send, "d. Divide\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "Operand 1: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(!isOperator_2);
+	sprintf(data_send, "Operand 2: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(operation_flag);
+	sprintf(data_send, "Result: %d\n", atoi(operator_1) / atoi(operator_2));
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "ESC: Return previous menu\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(selection != 27);
+}
 void bai3(void){
 	sprintf(data_send, "ESC: Return previous menu\n");
 	UART_Print(&huart4,data_send);
@@ -197,8 +279,7 @@ void bai3(void){
 		HAL_Delay(200);
 	}
 }
-void SystemClock_Config(void)
-{
+void SystemClock_Config(void){
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 

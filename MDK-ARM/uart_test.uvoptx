@@ -178,17 +178,7 @@
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>data_send</ItemText>
-        </Ww>
-        <Ww>
-          <count>6</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>\\uart_test\../Src/main.c\cnt</ItemText>
-        </Ww>
-        <Ww>
-          <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>cnt2</ItemText>
+          <ItemText>isOperator_2</ItemText>
         </Ww>
       </WatchWindow1>
       <WatchWindow2>
