@@ -9,6 +9,7 @@ void reset_value(void);
 void bai1(void);
 void bai2(void);
 void bai3(void);
+void bai4(void);
 void plus(void);
 void subtract(void);
 void multiple(void);
@@ -47,6 +48,10 @@ int main(void)
 				is_bai2 = 0;
 				bai3();
 				break;
+			case '4':
+				is_bai2 = 0;
+				bai4();
+				break;
 			// show menu
 			case 0x1B:
 				menu();
@@ -81,7 +86,11 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 				if(selection>=48 && selection <=57){
 					operator_1[array_index++] = selection;
 				}
-				else if(selection == 10) {
+				else if(selection == 8){
+					operator_1[array_index-1] = 0;
+					if(array_index >= 1) array_index --;
+				}
+				else if(selection == 10){
 					isOperator_2 = 1;
 					array_index = 0;
 				}
@@ -89,6 +98,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			else if(isOperator_2){
 				if(selection>=48 && selection <=57){
 					operator_2[array_index++] = selection;
+				}
+				else if(selection == 8){
+					operator_2[array_index-1] = 0;
+					if(array_index >= 1) array_index --;
 				}
 				else if(selection == 10) {
 					operation_flag = 0;
@@ -278,6 +291,15 @@ void bai3(void){
 		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_15);
 		HAL_Delay(200);
 	}
+}
+void bai4(void){
+	sprintf(data_send, "WARNING!!!  Implement 'bai4' sources\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "ESC: Return previous menu\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(selection != 27);
 }
 void SystemClock_Config(void){
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
