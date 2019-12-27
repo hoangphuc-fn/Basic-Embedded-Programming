@@ -72,8 +72,7 @@ void reset_value(void){
 	}
 }
 
-void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
-{
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 	if(huart->Instance==huart4.Instance)
 	{
 		if(is_bai2){
