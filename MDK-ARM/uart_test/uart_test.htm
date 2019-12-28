@@ -3,7 +3,7 @@
 <title>Static Call Graph - [uart_test\uart_test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image uart_test\uart_test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Dec 28 00:35:14 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Sat Dec 28 08:50:23 2019
 <BR><P>
 <H3>Maximum Stack Usage =        168 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -128,7 +128,7 @@ Global Symbols
 <P><STRONG><a name="[5d]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(.text)
 </UL>
-<P><STRONG><a name="[bb]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
+<P><STRONG><a name="[bc]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
 
 <P><STRONG><a name="[63]"></a>_main_scatterload</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry5.o(.ARM.Collect$$$$00000004))
 <BR><BR>[Calls]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
@@ -138,15 +138,15 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__scatterload
 </UL>
 
-<P><STRONG><a name="[bc]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
+<P><STRONG><a name="[bd]"></a>_main_clock</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry7b.o(.ARM.Collect$$$$00000008))
 
-<P><STRONG><a name="[bd]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
+<P><STRONG><a name="[be]"></a>_main_cpp_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry8b.o(.ARM.Collect$$$$0000000A))
 
-<P><STRONG><a name="[be]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
+<P><STRONG><a name="[bf]"></a>_main_init</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry9a.o(.ARM.Collect$$$$0000000B))
 
-<P><STRONG><a name="[bf]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
+<P><STRONG><a name="[c0]"></a>__rt_final_cpp</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry10a.o(.ARM.Collect$$$$0000000D))
 
-<P><STRONG><a name="[c0]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
+<P><STRONG><a name="[c1]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[0]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f407xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
@@ -403,9 +403,9 @@ Global Symbols
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr
 </UL>
 
-<P><STRONG><a name="[c1]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[c2]"></a>__aeabi_memset4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
-<P><STRONG><a name="[c2]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[c3]"></a>__aeabi_memset8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[68]"></a>__aeabi_memclr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -418,7 +418,7 @@ Global Symbols
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 
-<P><STRONG><a name="[c3]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
+<P><STRONG><a name="[c4]"></a>__aeabi_memclr8</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, memseta.o(.text), UNUSED)
 
 <P><STRONG><a name="[6a]"></a>_memset$wrapper</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, memseta.o(.text), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memset
@@ -437,10 +437,11 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plus
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiple
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;module
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
 </UL>
 
-<P><STRONG><a name="[c4]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[c5]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[a5]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
@@ -450,13 +451,13 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[c5]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[c6]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[66]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_uldivmod
 </UL>
 
-<P><STRONG><a name="[c6]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[c7]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[6d]"></a>strtol</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, strtol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = strtol &rArr; _strtoul
@@ -474,7 +475,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_main_scatterload
 </UL>
 
-<P><STRONG><a name="[c7]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
+<P><STRONG><a name="[c8]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
 <P><STRONG><a name="[6e]"></a>__rt_ctype_table</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, ctype_o.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtol
@@ -525,10 +526,10 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 </UL>
 
 <P><STRONG><a name="[75]"></a>HAL_GPIO_EXTI_Callback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_EXTI_Callback))
@@ -551,28 +552,28 @@ Global Symbols
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 </UL>
 
-<P><STRONG><a name="[ba]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
-<BR><BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<P><STRONG><a name="[bb]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_ReadPin))
+<BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
 </UL>
 
-<P><STRONG><a name="[b1]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
-<BR><BR>[Called By]<UL><LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<P><STRONG><a name="[b2]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_TogglePin))
+<BR><BR>[Called By]<UL><LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 </UL>
 
 <P><STRONG><a name="[89]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
 <BR><BR>[Called By]<UL><LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
 <LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxCpltCallback
 </UL>
 
 <P><STRONG><a name="[74]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
-<BR><BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
-<LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseTx_ISR
+<BR><BR>[Called By]<UL><LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_CloseTx_ISR
 <LI><a href="#[7f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[7d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitFlagStateUntilTimeout
 </UL>
 
 <P><STRONG><a name="[9c]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_IncTick))
@@ -583,8 +584,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[79]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 <LI><a href="#[78]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -694,12 +695,12 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Init
 </UL>
 
-<P><STRONG><a name="[b9]"></a>HAL_SPI_Transmit_IT</STRONG> (Thumb, 130 bytes, Stack size 12 bytes, stm32f4xx_hal_spi.o(i.HAL_SPI_Transmit_IT))
+<P><STRONG><a name="[ba]"></a>HAL_SPI_Transmit_IT</STRONG> (Thumb, 130 bytes, Stack size 12 bytes, stm32f4xx_hal_spi.o(i.HAL_SPI_Transmit_IT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_SPI_Transmit_IT
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
 </UL>
 
 <P><STRONG><a name="[88]"></a>HAL_SPI_TxCpltCallback</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(i.HAL_SPI_TxCpltCallback))
@@ -723,16 +724,17 @@ Global Symbols
 
 <P><STRONG><a name="[a8]"></a>HAL_UART_GetState</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_uart.o(i.HAL_UART_GetState))
 <BR><BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plus
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiple
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;module
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_2
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai1
 </UL>
 
@@ -774,7 +776,7 @@ Global Symbols
 <LI><a href="#[93]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_RxCpltCallback
 </UL>
 
-<P><STRONG><a name="[93]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 320 bytes, Stack size 8 bytes, main.o(i.HAL_UART_RxCpltCallback))
+<P><STRONG><a name="[93]"></a>HAL_UART_RxCpltCallback</STRONG> (Thumb, 326 bytes, Stack size 8 bytes, main.o(i.HAL_UART_RxCpltCallback))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_UART_RxCpltCallback
 </UL>
 <BR>[Calls]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
@@ -882,16 +884,17 @@ Global Symbols
 <LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strlen
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plus
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiple
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;module
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_2
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai1
 </UL>
 
@@ -907,22 +910,23 @@ Global Symbols
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[c8]"></a>__1sprintf$1</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf1.o(i.__0sprintf$1), UNUSED)
+<P><STRONG><a name="[c9]"></a>__1sprintf$1</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf1.o(i.__0sprintf$1), UNUSED)
 
 <P><STRONG><a name="[a7]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printf1.o(i.__0sprintf$1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
-<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plus
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiple
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;module
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_2
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai1
 </UL>
 
@@ -932,13 +936,13 @@ Global Symbols
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_strtoul
 </UL>
 
-<P><STRONG><a name="[c9]"></a>__rt_errno_addr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, errno.o(i.__aeabi_errno_addr), UNUSED)
+<P><STRONG><a name="[ca]"></a>__rt_errno_addr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, errno.o(i.__aeabi_errno_addr), UNUSED)
 
-<P><STRONG><a name="[ca]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
+<P><STRONG><a name="[cb]"></a>__scatterload_copy</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_copy), UNUSED)
 
-<P><STRONG><a name="[cb]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
+<P><STRONG><a name="[cc]"></a>__scatterload_null</STRONG> (Thumb, 2 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_null), UNUSED)
 
-<P><STRONG><a name="[cc]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
+<P><STRONG><a name="[cd]"></a>__scatterload_zeroinit</STRONG> (Thumb, 14 bytes, Stack size unknown bytes, handlers.o(i.__scatterload_zeroinit), UNUSED)
 
 <P><STRONG><a name="[a6]"></a>bai1</STRONG> (Thumb, 168 bytes, Stack size 8 bytes, main.o(i.bai1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = bai1 &rArr; __2sprintf
@@ -950,39 +954,40 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a9]"></a>bai2</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, main.o(i.bai2))
+<P><STRONG><a name="[a9]"></a>bai2</STRONG> (Thumb, 110 bytes, Stack size 16 bytes, main.o(i.bai2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = bai2 &rArr; subtract &rArr; atoi &rArr; strtol &rArr; _strtoul
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ac]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;subtract
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_value
+<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;reset_value
 <LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;plus
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;multiple
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;module
 <LI><a href="#[aa]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_2
 <LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;divide
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b0]"></a>bai3</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, main.o(i.bai3))
+<P><STRONG><a name="[b1]"></a>bai3</STRONG> (Thumb, 116 bytes, Stack size 32 bytes, main.o(i.bai3))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = bai3 &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
-<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_TogglePin
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[b2]"></a>bai4</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, main.o(i.bai4))
+<P><STRONG><a name="[b3]"></a>bai4</STRONG> (Thumb, 78 bytes, Stack size 8 bytes, main.o(i.bai4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = bai4 &rArr; setLED &rArr; __2sprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
-<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
-<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;return_bai4_menu
-<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
+<BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;start
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setLED
+<LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;setDirection
+<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;return_bai4_menu
+<LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
 </UL>
 <BR>[Called By]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -1006,16 +1011,16 @@ Global Symbols
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_Receive_IT
 <LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-<LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
-<LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
+<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<LI><a href="#[b1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai3
 <LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai2
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai1
 <LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
-<P><STRONG><a name="[b8]"></a>menu</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, main.o(i.menu))
+<P><STRONG><a name="[b9]"></a>menu</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, main.o(i.menu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = menu &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
@@ -1035,15 +1040,26 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai2
 </UL>
 
-<P><STRONG><a name="[b3]"></a>menu_4</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, main.o(i.menu_4))
+<P><STRONG><a name="[b4]"></a>menu_4</STRONG> (Thumb, 134 bytes, Stack size 8 bytes, main.o(i.menu_4))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = menu_4 &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;return_bai4_menu
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<BR>[Called By]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;return_bai4_menu
+<LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+</UL>
+
+<P><STRONG><a name="[af]"></a>module</STRONG> (Thumb, 180 bytes, Stack size 16 bytes, main.o(i.module))
+<BR><BR>[Stack]<UL><LI>Max Depth = 104<LI>Call Chain = module &rArr; atoi &rArr; strtol &rArr; _strtoul
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai2
 </UL>
 
 <P><STRONG><a name="[ad]"></a>multiple</STRONG> (Thumb, 176 bytes, Stack size 16 bytes, main.o(i.multiple))
@@ -1068,56 +1084,56 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai2
 </UL>
 
-<P><STRONG><a name="[af]"></a>reset_value</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, main.o(i.reset_value))
+<P><STRONG><a name="[b0]"></a>reset_value</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, main.o(i.reset_value))
 <BR><BR>[Called By]<UL><LI><a href="#[a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai2
 </UL>
 
-<P><STRONG><a name="[b7]"></a>return_bai4_menu</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.return_bai4_menu))
+<P><STRONG><a name="[b8]"></a>return_bai4_menu</STRONG> (Thumb, 14 bytes, Stack size 8 bytes, main.o(i.return_bai4_menu))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = return_bai4_menu &rArr; menu_4 &rArr; __2sprintf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
+<BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;menu_4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
 </UL>
 
-<P><STRONG><a name="[b5]"></a>setDirection</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(i.setDirection))
+<P><STRONG><a name="[b6]"></a>setDirection</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, main.o(i.setDirection))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = setDirection &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
 </UL>
 
-<P><STRONG><a name="[b4]"></a>setLED</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, main.o(i.setLED))
+<P><STRONG><a name="[b5]"></a>setLED</STRONG> (Thumb, 140 bytes, Stack size 24 bytes, main.o(i.setLED))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = setLED &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
 </UL>
 
-<P><STRONG><a name="[b6]"></a>start</STRONG> (Thumb, 206 bytes, Stack size 16 bytes, main.o(i.start))
+<P><STRONG><a name="[b7]"></a>start</STRONG> (Thumb, 206 bytes, Stack size 16 bytes, main.o(i.start))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = start &rArr; __2sprintf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UART_Print
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_UART_GetState
-<LI><a href="#[b9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
+<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_IT
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
-<LI><a href="#[ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_ReadPin
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2sprintf
 </UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
+<BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;bai4
 </UL>
 
 <P><STRONG><a name="[ac]"></a>subtract</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, main.o(i.subtract))

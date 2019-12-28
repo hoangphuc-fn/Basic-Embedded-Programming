@@ -1,57 +1,11 @@
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body
-  ******************************************************************************
-  * @attention
-  *
-  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
-  * All rights reserved.</center></h2>
-  *
-  * This software component is licensed by ST under BSD 3-Clause license,
-  * the "License"; You may not use this file except in compliance with the
-  * License. You may obtain a copy of the License at:
-  *                        opensource.org/licenses/BSD-3-Clause
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-
-/* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 
-/* Private includes ----------------------------------------------------------*/
-/* USER CODE BEGIN Includes */
-
-/* USER CODE END Includes */
-
-/* Private typedef -----------------------------------------------------------*/
-/* USER CODE BEGIN PTD */
-
-/* USER CODE END PTD */
-
-/* Private define ------------------------------------------------------------*/
-/* USER CODE BEGIN PD */
 #define EN_SPI	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 #define DIS_SPI HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_SET);
-/* USER CODE END PD */
-
-/* Private macro -------------------------------------------------------------*/
-/* USER CODE BEGIN PM */
-
-/* USER CODE END PM */
-
-/* Private variables ---------------------------------------------------------*/
-
-/* USER CODE BEGIN PV */
-
-/* USER CODE END PV */
-
-/* Private function prototypes -----------------------------------------------*/
+ 
 void SystemClock_Config(void);
 void menu(void);
 void menu_2(void);
@@ -68,6 +22,7 @@ void start(void);
 void subtract(void);
 void multiple(void);
 void divide(void);
+void module(void);
 void return_bai4_menu(void);
 char data_send[100];
 char operator_1[10];
@@ -84,29 +39,9 @@ uint8_t volatile is_bai2 = 0;
 uint8_t volatile is_bai4 = 0;
 uint8_t volatile count = 0;
 uint8_t spi_send_data = 0;
-/* USER CODE BEGIN PFP */
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
 int main(void)
 {
-  /* USER CODE BEGIN 1 */
-
-  /* USER CODE END 1 */
-  
-
-  /* MCU Configuration--------------------------------------------------------*/
-
-  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
   SystemClock_Config();
   MX_GPIO_Init();
@@ -173,7 +108,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 	if(huart->Instance==huart4.Instance)
 	{
 		if(is_bai2){
-			if(selection == 'a' || selection == 'b' || selection == 'c' ||selection == 'd'){
+			if(selection == 'a' || selection == 'b' || selection == 'c' ||selection == 'd' || selection == 'e'){
 				operation_flag= 1;
 			}
 		}
@@ -319,7 +254,7 @@ void bai1(void){
 void bai2(void){
 	while(selection!=27){
 		menu_2();
-		while(selection != 'a' && selection != 'b' && selection != 'c' && selection != 'd'  && selection != 27);
+		while(selection != 'a' && selection != 'b' && selection != 'c' && selection != 'd'  && selection != 'e' && selection != 27);
 		switch(selection){
 			case 'a':
 				plus();
@@ -329,17 +264,22 @@ void bai2(void){
 			case 'b':
 				subtract();
 				reset_value();
-			selection = 0;
+				selection = 0;
 				break;
 			case 'c':
 				multiple();
 				reset_value();
-			selection = 0;
+				selection = 0;
 				break;
 			case 'd':
 				divide();
 				reset_value();
-			selection = 0;
+				selection = 0;
+				break;
+			case 'e':
+				module();
+				reset_value();
+				selection = 0;
 				break;
 			
 		}
@@ -418,6 +358,26 @@ void divide(void){
 	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
 	while(operation_flag);
 	sprintf(data_send, "Result: %d\n", atoi(operator_1) / atoi(operator_2));
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "ESC: Return previous menu\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(selection != 27);
+}
+void module(void){
+	sprintf(data_send, "e. Module\n");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	sprintf(data_send, "Operand 1: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(!isOperator_2);
+	sprintf(data_send, "Operand 2: ");
+	UART_Print(&huart4,data_send);
+	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
+	while(operation_flag);
+	sprintf(data_send, "Result: %d\n", atoi(operator_1) % atoi(operator_2));
 	UART_Print(&huart4,data_send);
 	while(HAL_UART_GetState(&huart4)!= HAL_UART_STATE_BUSY_RX);
 	sprintf(data_send, "ESC: Return previous menu\n");
